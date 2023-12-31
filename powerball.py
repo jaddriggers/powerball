@@ -15,15 +15,22 @@ soup = BeautifulSoup(response.text, 'html.parser')
 # find the tag : <span class='game-jackpot-number text-xxxl lh-1 text-center'
 tag = soup.find('span', {'class': 'game-jackpot-number text-xxxl lh-1 text-center'})
 date_tag = soup.find('h5', {'class': 'card-title mx-auto mb-3 lh-1 text-center title-date'})
+cash_value_tag = soup.find('span', {'class': 'game-jackpot-number text-lg lh-1 text-center'})
+
 # extract the content inside the tag
 draw_date = date_tag.text
 jackpot = tag.text
+cash_tag = cash_value_tag.text
 
 # display the draw date
-st.sidebar.write(f"The next Powerball draw date is {draw_date}")
+st.sidebar.markdown(f"# Draw Date")
+st.sidebar.write(f"{draw_date}")
 
 # display the jackpot
 st.sidebar.write(f"The current Powerball jackpot is {jackpot}")
+
+# display cash value
+st.sidebar.write(f"The current cash value is {cash_tag}")
 
 def generate_powerball_numbers():
     numbers = random.sample(range(1, 70), 5)
