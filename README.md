@@ -24,13 +24,15 @@ This application is written in Python and requires the following Python librarie
 2. Navigate to the cloned project directory.
 3. Install the required Python libraries using pip:
 
-bash pip install streamlit sqlalchemy pandas
+`pip install streamlit sqlalchemy pandas`
 
+`pip install -r requirements.txt`
 ## How to run
 
-bash streamlit run powerball.py
 
 After installing the required Python libraries, you can run the application using the following command:
+
+`streamlit run powerball.py`
 
 The application will be served on your local machine and can be accessed through a web browser at localhost:8501.
 
